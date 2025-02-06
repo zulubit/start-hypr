@@ -74,13 +74,13 @@ window#waybar {
 }
 
 #mpris.paused {
-  color: @primary; /* Paused state */
+  color: @fg; /* Paused state */
 }
 
 /* Separator Style */
 #custom-sep {
   padding: 0px;
-  color: @primary; /* Subtle separators */
+  color: @fg; /* Subtle separators */
 }
 
 /* Empty Window Background */
@@ -90,31 +90,31 @@ window#waybar.empty #window {
 
 /* Individual Module Colors */
 #cpu {
-  color: @primary; /* CPU module */
+  color: @fg; /* CPU module */
 }
 
 #battery {
-  color: @primary; /* Battery module */
+  color: @fg; /* Battery module */
 }
 
 #network {
-  color: @primary; /* Network module */
+  color: @fg; /* Network module */
 }
 
 #custom-notification{
-  color: @primary; /* Notification module */
+  color: @fg; /* Notification module */
 }
 
 #memory {
-  color: @primary; /* Memory module */
+  color: @fg; /* Memory module */
 }
 
 #clock {
-  color: @primary; /* Clock module */
+  color: @fg; /* Clock module */
 }
 
 #clock.simpleclock {
-  color: @primary; /* Simple clock mode */
+  color: @fg; /* Simple clock mode */
 }
 
 #window {
@@ -122,7 +122,7 @@ window#waybar.empty #window {
 }
 
 #pulseaudio {
-  color: @primary; /* Audio module when active */
+  color: @fg; /* Audio module when active */
 }
 
 #pulseaudio.muted {
@@ -130,7 +130,7 @@ window#waybar.empty #window {
 }
 
 #custom-logo {
-  color: @primary; /* Custom logo module */
+  color: @fg; /* Custom logo module */
 }
 
 #custom-power {
