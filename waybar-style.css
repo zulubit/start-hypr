@@ -1,0 +1,141 @@
+/* Define color palette based on Hyprland theme */
+@define-color bg #2E3440;          /* Background */
+@define-color fg #D8DEE9;          /* Foreground (text) */
+@define-color primary #88C0D0;     /* Primary (e.g., highlights, active elements) */
+@define-color secondary #5E81AC;   /* Secondary (e.g., less prominent highlights) */
+@define-color success #A3BE8C;     /* Success (e.g., confirmations) */
+@define-color warning #EBCB8B;     /* Warning (e.g., cautions) */
+@define-color danger #BF616A;      /* Danger (e.g., errors) */
+@define-color border_active @primary;
+@define-color border_inactive #4C566A;
+
+/* General Styles */
+* {
+  min-height: 0;
+  min-width: 0;
+  font-family: "Hack Nerd Font Mono";
+  font-size: 16px;
+  font-weight: 600;
+}
+
+window#waybar {
+  transition-property: background-color;
+  transition-duration: 0.5s;
+  background-color: transparent;
+}
+
+/* Workspace Buttons */
+#workspaces button {
+  padding: 0.3rem 0.6rem;
+  margin: 0.4rem 0.25rem;
+  border-radius: 6px;
+  background-color: @bg;
+  color: @fg;
+}
+
+#workspaces button:hover {
+  color: @bg;
+  background-color: @fg;
+}
+
+#workspaces button.active {
+  background-color: @bg;
+  color: @primary; /* Active workspace */
+}
+
+#workspaces button.urgent {
+  background-color: @bg;
+  color: @danger; /* Urgent workspace */
+}
+
+/* Module Styles */
+#clock,
+#pulseaudio,
+#custom-logo,
+#custom-power,
+#custom-spotify,
+#custom-notification,
+#cpu,
+#battery,
+#network,
+#tray,
+#memory,
+#window,
+#mpris {
+  padding: 0.3rem 0.6rem;
+  margin: 0.4rem 0.25rem;
+  border-radius: 6px;
+  background-color: @bg;
+}
+
+/* MPRIS (Media Player) States */
+#mpris.playing {
+  color: @success; /* Playing state */
+}
+
+#mpris.paused {
+  color: @secondary; /* Paused state */
+}
+
+/* Separator Style */
+#custom-sep {
+  padding: 0px;
+  color: @secondary; /* Subtle separators */
+}
+
+/* Empty Window Background */
+window#waybar.empty #window {
+  background-color: transparent;
+}
+
+/* Individual Module Colors */
+#cpu {
+  color: @primary; /* CPU module */
+}
+
+#battery {
+  color: @primary; /* Battery module */
+}
+
+#network {
+  color: @primary; /* Network module */
+}
+
+#memory {
+  color: @secondary; /* Memory module */
+}
+
+#clock {
+  color: @secondary; /* Clock module */
+}
+
+#clock.simpleclock {
+  color: @primary; /* Simple clock mode */
+}
+
+#window {
+  color: @fg; /* Window title module text */
+}
+
+#pulseaudio {
+  color: @secondary; /* Audio module when active */
+}
+
+#pulseaudio.muted {
+  color: @border_inactive; /* Muted audio module state */
+}
+
+#custom-logo {
+  color: @primary; /* Custom logo module */
+}
+
+#custom-power {
+  color: @danger; /* Power/shutdown module */
+}
+
+/* Tooltip Styles */
+tooltip {
+  background-color: @bg;       /* Tooltip background matches bar background */
+  border: 2px solid @primary; /* Tooltip border matches primary highlight color */
+}
+
