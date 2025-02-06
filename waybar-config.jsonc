@@ -92,10 +92,6 @@
     },
     "on-click": "pavucontrol",
   },
-  "custom/sep": {
-    "format": "|",
-    "tooltip": false,
-  },
   "network": {
     // "interface": "wlp2*", // (Optional) To force the use of this interface
     "format-wifi": " {essid} ({signalStrength}%)",
@@ -127,6 +123,8 @@
     "format-icons": {
       "none": "󰅺",
       "notification": "󰡟",
+      "dnd-none": "󰂛",     // Muted (no notifications)
+      "dnd-notification": "󰂚" // Muted with notifications
     },
     "on-click": "sleep 0.1 && swaync-client -t -sw",
     "return-type": "json",

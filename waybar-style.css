@@ -101,6 +101,10 @@ window#waybar.empty #window {
   color: @primary; /* Network module */
 }
 
+#custom-notification{
+  color: @secondary; /* Notification module */
+}
+
 #memory {
   color: @secondary; /* Memory module */
 }
