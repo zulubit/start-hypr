@@ -74,13 +74,13 @@ window#waybar {
 }
 
 #mpris.paused {
-  color: @secondary; /* Paused state */
+  color: @primary; /* Paused state */
 }
 
 /* Separator Style */
 #custom-sep {
   padding: 0px;
-  color: @secondary; /* Subtle separators */
+  color: @primary; /* Subtle separators */
 }
 
 /* Empty Window Background */
@@ -102,15 +102,15 @@ window#waybar.empty #window {
 }
 
 #custom-notification{
-  color: @secondary; /* Notification module */
+  color: @primary; /* Notification module */
 }
 
 #memory {
-  color: @secondary; /* Memory module */
+  color: @primary; /* Memory module */
 }
 
 #clock {
-  color: @secondary; /* Clock module */
+  color: @primary; /* Clock module */
 }
 
 #clock.simpleclock {
@@ -122,7 +122,7 @@ window#waybar.empty #window {
 }
 
 #pulseaudio {
-  color: @secondary; /* Audio module when active */
+  color: @primary; /* Audio module when active */
 }
 
 #pulseaudio.muted {
