@@ -14,12 +14,16 @@ TMP_DIR="/tmp/theme_install"
 # Create a temporary directory for downloads
 mkdir -p "$TMP_DIR"
 
-# Function to download a file
+# Function to download a file and check if the download was successful
 download() {
     local url=$1
     local dest=$2
     echo "Downloading $url..."
-    curl -L -o "$dest" "$url"
+    wget -O "$dest" "$url"
+    if [[ $? -ne 0 ]]; then
+        echo "Error downloading $url"
+        exit 1
+    fi
 }
 
 # Download and extract the Nordic theme
@@ -28,6 +32,10 @@ download "$NORDIC_URL" "$NORDIC_ARCHIVE"
 mkdir -p "$THEME_DIR"
 echo "Extracting Nordic theme to $THEME_DIR..."
 tar -xvf "$NORDIC_ARCHIVE" -C "$THEME_DIR" --strip-components=1
+if [[ $? -ne 0 ]]; then
+    echo "Error extracting Nordic theme to $THEME_DIR"
+    exit 1
+fi
 echo "Nordic theme installed successfully to $THEME_DIR."
 
 # Download and extract Hack font
@@ -36,6 +44,10 @@ download "$HACK_URL" "$HACK_ARCHIVE"
 mkdir -p "$FONT_DIR"
 echo "Extracting Hack fonts to $FONT_DIR..."
 unzip -o "$HACK_ARCHIVE" -d "$FONT_DIR"
+if [[ $? -ne 0 ]]; then
+    echo "Error extracting Hack fonts to $FONT_DIR"
+    exit 1
+fi
 fc-cache -fv
 echo "Hack fonts installed successfully to $FONT_DIR!"
 
@@ -45,11 +57,19 @@ download "$BANANA_CURSOR_URL" "$BANANA_CURSOR_ARCHIVE"
 mkdir -p "$CURSOR_DIR"
 echo "Extracting Banana cursor theme to $CURSOR_DIR..."
 tar -xvf "$BANANA_CURSOR_ARCHIVE" -C "$CURSOR_DIR" --strip-components=1
+if [[ $? -ne 0 ]]; then
+    echo "Error extracting Banana cursor theme to $CURSOR_DIR"
+    exit 1
+fi
 echo "Banana cursor theme installed successfully to $CURSOR_DIR!"
 
 # Cleanup
+echo "Cleaning up temporary files..."
 rm -rf "$TMP_DIR"
 rm -rf "$HOME/.cache"
+
+# Optionally create a symlink for the cursor
 # sudo ln -s ~/.local/share/icons/Banana ~/.local/share/icons/default
-echo "Installation completed!"
+
+echo "Installation completed successfully!"
 
