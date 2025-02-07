@@ -13,7 +13,7 @@ sudo xbps-install -Syu || error_exit "Void failed to update before starting the 
 echo "repository=https://raw.githubusercontent.com/Makrennel/hyprland-void/repository-x86_64-glibc" | sudo tee /etc/xbps.d/hyprland-void.conf || error_exit "Failed to add Hyprland repository"
 
 # Install Hyprland and dependencies
-sudo xbps-install -S hyprland sof-firmware sof-tools wl-clipboard unzip dbus xz curl wget elogind polkit-elogind pipewire wireplumber SwayNotificationCenter brightnessctl Waybar swaybg foot wmenu playerctl swaylock pavucontrol NetworkManager blueman xdg-desktop-portal-hyprland xdg-desktop-portal-gtk flatpak || error_exit "Package installation failed"
+sudo xbps-install -S hyprland noto-fonts-ttf noto-fonts-emoji sof-firmware sof-tools wl-clipboard unzip dbus xz curl wget elogind polkit-elogind pipewire wireplumber SwayNotificationCenter brightnessctl Waybar swaybg foot wmenu playerctl swaylock pavucontrol NetworkManager blueman xdg-desktop-portal-hyprland xdg-desktop-portal-gtk flatpak || error_exit "Package installation failed"
 
 # Add Flathub for Flatpak
 sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo || error_exit "Failed to add Flathub repository"
